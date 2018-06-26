@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75b020eb-de95-4a3c-a663-fcceea46b589" name="Default" comment="" />
+    <list default="true" id="75b020eb-de95-4a3c-a663-fcceea46b589" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nba_bball_application/main/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nba_bball_application/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nba_bball_application/main/PlayByPlay.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nba_bball_application/main/PlayByPlayBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nba_bball_application/main/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nba_bball_application/main/PlusMinusCalculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/nba_bball_application/main/StartOfPeriod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,21 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="nba_bball_application.iml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nba_bball_application.iml">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="PlusMinusCalculator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlusMinusCalculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/PlusMinusCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="502">
@@ -34,6 +35,15 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -77,12 +87,18 @@
     </leaf>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Sohan Shah &lt;sohans@spotify.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/PlusMinusCalculator.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -197,12 +213,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1530054514846</updated>
-      <workItem from="1530054517758" duration="693000" />
+      <workItem from="1530054517758" duration="986000" />
     </task>
+    <task id="LOCAL-00001" summary="gitignore">
+      <created>1530055599043</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1530055599043</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="693000" />
+    <option name="totallyTimeSpent" value="986000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="121" y="23" width="1680" height="961" extended-state="0" />
@@ -217,8 +250,8 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3298611" />
-      <window_info anchor="bottom" id="Version Control" weight="0.3298611" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3298611" />
+      <window_info active="true" anchor="bottom" id="Version Control" visible="true" weight="0.3298611" />
+      <window_info anchor="bottom" id="Terminal" weight="0.3298611" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
@@ -243,6 +276,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitignore" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/Player.java">
@@ -290,6 +327,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
         </state>
       </provider>
     </entry>
