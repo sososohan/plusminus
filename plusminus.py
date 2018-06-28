@@ -9,8 +9,6 @@ SUB=8
 START_PERIOD=12
 END_PERIOD=13
 
-data_folder = "basketball_analytics"
-
 class Game:
   def __init__(self, id, teams={}):
     self.id = id
@@ -33,11 +31,11 @@ class Team:
     for player in players:
       self.players[player.id] = player
 
-  def setActive(self, playerIds):
+  def set_active(self, player_ids):
     for player in self.players:
       self.players[player].active = False
-    for playerId in playerIds:
-      self.players[playerId].active = True
+    for player_id in player_ids:
+      self.players[player_id].active = True
 
 class Player:
   def __init__(self, id, team_id):
@@ -76,7 +74,7 @@ def init_period(lineup_data, game_id, period, game):
       active_players[team_id] = []
     active_players[team_id].append(person_id)
   for team in game.teams:
-    game.teams[team].setActive(active_players[team])
+    game.teams[team].set_active(active_players[team])
   return game
 
 def main():
@@ -104,16 +102,20 @@ def main():
     person1 = row[11]
     person2 = row[12]
 
-    # on "end period" events for period 4, write the existing game object to disk
-    if event_type == END_PERIOD and period == 4:
-      f = open('results.csv', 'w')
+    # on "end period" events for period 4 or 5, write the existing game object to disk
+    if event_type == END_PERIOD and period >= 4:
+      f = open('results.csv', 'a')
       f.write(str(game))
+      game = None
 
     # on "start period" events, call init_period to set up new players
     if event_type == START_PERIOD:
       game = init_period(lineup_data, game_id, period, game)
 
     if event_type == SUB: # person1 is subbing out, person2 is subbing in
+      for team_id_iter, team in game.teams.iteritems():
+        if team.players.get(person1) != None:
+          team_id = team_id_iter # override team_id because it's set incorrectly on the SUB events
       game.teams[team_id].players[person1].active = False
       if game.teams[team_id].players.get(person2) == None:
         game.teams[team_id].players[person2] = Player(person2, team_id)
