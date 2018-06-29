@@ -50,7 +50,7 @@ def made_bucket(offensive_team, defensive_team, value):
       player.plus_minus += value
   for player_id, player in defensive_team.players.iteritems():
     if player.active:
-      player.plus_minus-= value
+      player.plus_minus -= value
 
 def convert_to_int(i):
   if i.isdigit():
@@ -78,7 +78,6 @@ def init_period(lineup_data, game_id, period, game):
   return game
 
 def main():
-  # first iterate through game lineup data to get the initial set of players on the floor
   lineup_data = []
   pbp_data = []
   with open("basketball_analytics/lineup_data.txt") as f:
@@ -90,7 +89,7 @@ def main():
     for line in f:
       pbp_data.append(map(convert_to_int, line.strip().split("\t")))
 
-  pbp_data = [item for item in pbp_data if item[2] in [MADE_SHOT, MADE_FT, SUB, START_PERIOD, END_PERIOD]] # we only care about made shots, made free throws, substitutions and start of period
+  pbp_data = [item for item in pbp_data if item[2] in [MADE_SHOT, MADE_FT, SUB, START_PERIOD, END_PERIOD]] # we only care about made shots, made free throws, substitutions, and starts and ends of periods
 
   game = None
   for idx, row in enumerate(pbp_data):
@@ -102,17 +101,17 @@ def main():
     person1 = row[11]
     person2 = row[12]
 
-    # on "end period" events when the next event is for period 1, write the existing game object to disk because this game is over
+    # on "end period" events when the next event is for period 1 (or there are no more events), write the existing game object to disk because this game is over
     if event_type == END_PERIOD and (idx+1 == len(pbp_data) or pbp_data[idx+1][3] == 1):
       f = open('results.csv', 'a')
       f.write(str(game))
-      game = None
+      game = None # reset the game object that gets passed to init_period
 
     # on "start period" events, call init_period to set up new players
     if event_type == START_PERIOD:
       game = init_period(lineup_data, game_id, period, game)
 
-    if event_type == SUB: # person1 is subbing out, person2 is subbing in
+    if event_type == SUB: # person1 is subbing out, person2 is subbing in. person1 should already be registered as part of his team because he's already on the floor
       for team_id_iter, team in game.teams.iteritems():
         if team.players.get(person1) != None:
           team_id = team_id_iter # override team_id because it's set incorrectly on the SUB events
