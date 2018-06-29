@@ -93,7 +93,7 @@ def main():
   pbp_data = [item for item in pbp_data if item[2] in [MADE_SHOT, MADE_FT, SUB, START_PERIOD, END_PERIOD]] # we only care about made shots, made free throws, substitutions and start of period
 
   game = None
-  for row in pbp_data:
+  for idx, row in enumerate(pbp_data):
     game_id = row[0]
     event_type = row[2]
     period = row[3]
@@ -102,8 +102,8 @@ def main():
     person1 = row[11]
     person2 = row[12]
 
-    # on "end period" events for period 4 or 5, write the existing game object to disk
-    if event_type == END_PERIOD and period >= 4:
+    # on "end period" events when the next event is for period 1, write the existing game object to disk because this game is over
+    if event_type == END_PERIOD and (idx+1 == len(pbp_data) or pbp_data[idx+1][3] == 1):
       f = open('results.csv', 'a')
       f.write(str(game))
       game = None
